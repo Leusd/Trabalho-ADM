@@ -9,14 +9,14 @@ if ("serviceWorker" in navigator) {
 
 let despesas = [];
 
-function adicionarDespesa() {
+async function adicionarDespesa() {
     const descricao = document.getElementById('descricao').value;
     const quantidade = parseFloat(document.getElementById('quantidade').value);
     const valor = parseFloat(document.getElementById('valor').value);
     const moedaOrigem = document.getElementById('moedaOrigem').value;
     const moedaDestino = document.getElementById('moedaDestino').value;
 
-    fetch('https://v6.exchangerate-api.com/v6/0c97323f348aa3d7704c9606/latest/' + moedaOrigem)
+    await fetch('https://v6.exchangerate-api.com/v6/0c97323f348aa3d7704c9606/latest/' + moedaOrigem)
         .then((response) => response.json())
         .then((json) => {
             const taxaCambio = json['conversion_rates'][moedaDestino]; // Taxa fictícia para conversão USD-BRL
