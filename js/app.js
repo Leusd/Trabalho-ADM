@@ -65,6 +65,9 @@ function atualizarTotais() {
 
     document.getElementById('totalOrigem').textContent = totalOrigem.toFixed(2);
     document.getElementById('totalDestino').textContent = totalDestino.toFixed(2);
+    document.getElementById('descricao').value = "";
+    document.getElementById('quantidade').value = "";
+    document.getElementById('valor').value = "";
 }
 
 function excluirDespesa(index) {
